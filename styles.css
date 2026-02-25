@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #d4447b;
+    --secondary-color: #f4a261;
+    --accent-color: #e76f51;
+    --light-bg: #fffbf0;
+    --dark-text: #2a2a2a;
+    --border-color: #e5d5c8;
+    --success-color: #2ecc71;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fffbf0 0%, #fff5e6 100%);
+    color: var(--dark-text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #d4447b 0%, #e76f51 100%);
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(212, 68, 123, 0.2);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.header .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-bottom: 40px;
+}
+
+/* Quiz Section */
+.quiz-section {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.quiz-container {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #d4447b 0%, #e76f51 100%);
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.progress-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.question-container {
+    margin-bottom: 40px;
+}
+
+.question-container h2 {
+    font-size: 1.8rem;
+    color: var(--dark-text);
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.options-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.option {
+    padding: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    font-size: 1.05rem;
+}
+
+.option:hover {
+    border-color: var(--primary-color);
+    background: #fff5f5;
+    transform: translateX(5px);
+}
+
+.option.selected {
+    border-color: var(--primary-color);
+    background: #fff0f6;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #d4447b 0%, #e76f51 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(212, 68, 123, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212, 68, 123, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--border-color);
+    color: var(--dark-text);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background: #d5d0c8;
+    transform: translateY(-3px);
+}
+
+/* Reservation Section */
+.reservation-section {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.reservation-container {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.celebration-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.celebration-header h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #d4447b 0%, #e76f51 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.score-display {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #f9f5f0;
+    border-radius: 10px;
+}
+
+.score-text {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+#scoreDisplay {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.score-bar {
+    width: 100%;
+    height: 12px;
+    background: var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.score-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #d4447b 0%, #e76f51 100%);
+    transition: width 0.8s ease;
+    border-radius: 10px;
+}
+
+.reservation-card {
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.restaurant-image {
+    background: linear-gradient(135deg, #d4447b 0%, #e76f51 100%);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    padding: 20px;
+    text-align: center;
+}
+
+.reservation-details {
+    padding: 30px;
+}
+
+.reservation-details h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.cuisine {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 25px 0;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-item .label {
+    display: block;
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.info-item .value {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.description {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.special-message {
+    background: #fff0f6;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header .subtitle {
+        font-size: 1rem;
+    }
+
+    .quiz-container,
+    .reservation-container {
+        padding: 25px;
+    }
+
+    .question-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .reservation-card {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-image {
+        height: 200px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
