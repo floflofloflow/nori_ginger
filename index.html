@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Celebration Dinners - A Special Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🍽️ A Night to Celebrate Our Love</h1>
+            <p class="subtitle">Help us celebrate our marriage with an evening of great food and company!</p>
+        </header>
+
+        <!-- Quiz Section -->
+        <main class="main-content">
+            <section class="quiz-section" id="quizSection">
+                <div class="quiz-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text"><span id="currentQuestion">1</span> / <span id="totalQuestions">5</span></p>
+
+                    <div class="question-container">
+                        <h2 id="question"></h2>
+                        <div class="options-container" id="optionsContainer"></div>
+                    </div>
+
+                    <div class="button-container">
+                        <button id="prevBtn" class="btn btn-secondary" style="display:none;">← Previous</button>
+                        <button id="nextBtn" class="btn btn-primary" style="display:none;">Next →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reservation Section -->
+            <section class="reservation-section" id="reservationSection" style="display:none;">
+                <div class="reservation-container">
+                    <div class="celebration-header">
+                        <h1>🎉 Your Celebration Dinner Reservation</h1>
+                    </div>
+
+                    <div class="score-display">
+                        <p class="score-text">Compatibility Score: <span id="scoreDisplay">0</span>%</p>
+                        <div class="score-bar">
+                            <div class="score-fill" id="scoreFill"></div>
+                        </div>
+                    </div>
+
+                    <div class="reservation-card" id="reservationCard">
+                        <div class="restaurant-image" id="restaurantImage"></div>
+                        <div class="reservation-details">
+                            <h2 id="restaurantName"></h2>
+                            <p class="cuisine" id="cuisine"></p>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="label">📅 Date</span>
+                                    <span class="value" id="dateDisplay"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">⏰ Time</span>
+                                    <span class="value" id="timeDisplay"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">👥 Party Size</span>
+                                    <span class="value" id="partySizeDisplay">4</span>
+                                </div>
+                            </div>
+                            <p class="description" id="description"></p>
+                            <div class="special-message" id="specialMessage"></div>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button id="retakeBtn" class="btn btn-secondary">Take Quiz Again</button>
+                        <button id="shareBtn" class="btn btn-primary">Share With Us</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>We can't wait to celebrate with you! ❤️</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
